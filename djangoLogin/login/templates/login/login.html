@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #021526;
+            color: white;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            font-size: 2rem;
+        }
+        form{
+            background-color: #03346E;
+            padding: 3rem;
+        }
+        input{
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            margin: 1rem 0px;
+            border-radius: 2rem;
+            outline: none;
+            border: #021526;
+        }
+        h2{
+            color: #E2E2B6;
+            margin-bottom:.3rem;
+        }
+        .login-btn button{
+            text-align: center;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            border: none;
+            padding: .7rem 0px;
+            background: none;
+            font-size: 2rem;
+            color: whitesmoke;
+            background-color: #6EACDA;
+            width: 100%;
+        }
+        .login-btn button:hover{
+            background-color: red;
+            transition: .5s ease-in-out;
+        }
+        .error{
+            color: red;
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error">
+        <div class="error">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div>
+                <h2>Login</h2>
+            </div>
+            <div>
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <div class="login-btn">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+    <div>
+    </div>
+</body>
+</html>
